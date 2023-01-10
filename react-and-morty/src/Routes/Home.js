@@ -1,10 +1,14 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 const Home = () => {
     return (
-        <div>
-            <button className="glow-on-hover" type="button">HOVER ME, THEN CLICK ME!</button>
-        </div>
+        <>
+        <Link to={`characters`}>
+            <button className="glow-on-hover" type="button">Characters</button></Link>
+    <Link to={`locations`}>
+            <button className="glow-on-hover" type="button">Locations</button></Link></>
+
     );
 };
 

@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 
 const Cards = ({character}) => {
     let{id,name,image,location,species,page}=character;
+    // console.log(character)
     return (
 
 

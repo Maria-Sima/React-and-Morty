@@ -2,16 +2,16 @@ import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 
 const CardInfo = () => {
-    let [fetchedData,setFetch]=useState([])
-    let {name,image,location,origin,gender,species,status}=fetchedData;
+    let [info,setInfo]=useState([])
+    let {name,image,location,origin,gender,species,status}=info;
     let {id}=useParams()
     let api=`https://rickandmortyapi.com/api/character/${id}`
 
     useEffect(()=> {
         (async function () {
             let data = await fetch(api).then(res => res.json()).catch(err => console.error(err))
-            setFetch(data)
-            console.log(data.results)
+            setInfo(data)
+            // console.log(data.results)
         })()
     },[api])
 

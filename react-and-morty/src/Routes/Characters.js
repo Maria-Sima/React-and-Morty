@@ -23,16 +23,16 @@ const [pageNumber,setPageNumber]=useState(1)
     const characters = useCharacters(pageNumber);
     const locations = useLocations(1);
     let {info,results}=characters;
-    console.log("Characters data: ");
-    console.log(results);
-    console.log("Locations data: ");
-    console.log(locations);
+    // console.log("Characters data: ");
+    // console.log(results);
+    // console.log("Locations data: ");
+    // console.log(locations);
 
     return <div className="App">
         <div className="col-8">
             <div className="row">
                 {results?.map(character=>{
-                    return <Cards character={character} pageNumber={pageNumber} />
+                    return <Cards character={character}  />
                 })}
             </div>
         </div>

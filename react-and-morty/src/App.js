@@ -5,7 +5,8 @@ import Navbar from "./Components/Navbar";
 import Location from "./Routes/Location";
 import Home from "./Routes/Home";
 import Characters from "./Routes/Characters";
-import CardInfo from "./Components/CardInfo";
+import CardInfo from "./Routes/CardInfo";
+import LocationInfo from "./Routes/LocationInfo";
 
 
 
@@ -19,6 +20,7 @@ function App(){
           <Route path="/" element={<Home/>}/>
             <Route path="/characters/:id" element={<CardInfo/>}/>
             <Route path="/characters" element={<Characters/>}/>
+            <Route path="/locations/:id" element={<LocationInfo />}/>
           <Route path="/locations" element={<Location />}/>
         </Routes>
       </Router>
