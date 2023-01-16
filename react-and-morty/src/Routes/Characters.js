@@ -8,26 +8,25 @@ import Pagination from "../Components/Pagination";
 
 const Characters = () => {
 const [pageNumber,setPageNumber]=useState(1)
-//     const [search,setSearch]=useState('')
-//     const [characters,setCharacters] = useState(pageNumber);
-//
-// let api=`https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`;
-//     useEffect(()=>{
-//         (async function(){
-//             let data=await fetch(api).then(res=>res.json()).catch(err=>console.error(err))
-//             setCharacters(data)
-//             console.log(data.results)
-//         })()
-//     },[api])
-//     console.log(results)
+    // const [loading,setLoading]=useState(true);
     const characters = useCharacters(pageNumber);
-    const locations = useLocations(1);
+    const [char,setChar]=useState(characters)
     let {info,results}=characters;
-    // console.log("Characters data: ");
-    // console.log(results);
-    // console.log("Locations data: ");
-    // console.log(locations);
 
+const handleScroll=async ()=>{
+    if(window.innerHeight+document.documentElement.scrollTop+1>=document.documentElement.scrollHeight){
+        setPageNumber(prev=>prev+1)
+        await setChar(prev=>[...prev,characters])
+        // setLoading(true)
+        console.log(char)
+    }
+}
+useEffect(()=>{
+    window.addEventListener('scroll',handleScroll)
+
+
+    return ()=>window.removeEventListener('scroll',handleScroll)
+},[])
     return <div className="App">
         <div className="col-8">
             <div className="row">
@@ -36,6 +35,7 @@ const [pageNumber,setPageNumber]=useState(1)
                 })}
             </div>
         </div>
+
           <Pagination pageNumber={pageNumber} info={info} setPageNumber={setPageNumber} />
     </div>
 

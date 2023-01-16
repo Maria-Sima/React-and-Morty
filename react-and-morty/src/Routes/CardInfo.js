@@ -11,7 +11,6 @@ const CardInfo = () => {
         (async function () {
             let data = await fetch(api).then(res => res.json()).catch(err => console.error(err))
             setInfo(data)
-            // console.log(data.results)
         })()
     },[api])
 

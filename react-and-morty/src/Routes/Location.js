@@ -17,7 +17,6 @@ const Location = () => {
 
             {
                 results?.map(location=>{
-                    // console.log(location.residents)
                     return <Link className = "" to={`${location.id}`}
                                    key={location.id}>
                         <div>{location.type.name}</div>

@@ -6,21 +6,21 @@ import {Link} from "react-router-dom";
 
 const Cards = ({character}) => {
     let{id,name,image,location,species,page}=character;
-    // console.log(character)
     return (
+                 <div style={{
+                     backgroundImage: `url(${image})`
+                 }}className='card'>
+                   <div className="card-content">
+                 <h2 className='card-title'>{name}</h2>
+                  <div className='card-body'>
+                      <span className="">Species: {species}</span>
+                      <div className="">Location: {location.name}</div>
+                  </div>
+                       <Link className  to={`/${id}`}
+                             key={id}><a href="#" className="button">More</a></Link>
+                  </div>
+                 </div>
 
-
-            <Link className = "" to={`${id}`}
-                  key={id}>
-                <img className=" " src={image} alt="" />
-                <div className="content">
-                    <div className="">{name}</div>
-                    <div className="info">
-                        <div className="">Last Location</div>
-                        <div className="">{location.name}</div>
-                    </div>
-                </div>
-            </Link>
 
 
 

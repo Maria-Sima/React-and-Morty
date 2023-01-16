@@ -1,35 +1,42 @@
 import React, {useEffect, useState} from 'react';
 import {useLocations} from "../api/useData";
 import Cards from "../Components/Cards";
+import {useParams} from "react-router-dom";
 
 const LocationInfo = () => {
-    const [pageNumber,setPageNumber]=useState(1)
-    const locations = useLocations(pageNumber); // "loading"
+        let [info,setInfo]=useState([])
+        let [results,setResults]=useState([])
+        let {id}=useParams()
+        let api=`https://rickandmortyapi.com/api/location/${id}`
 
-    let {info,results}=locations; // info = undefined / results = undefined
-    // let {residents}=results; // undefined.residents
+        useEffect(()=> {
+            (async function () {
+                let data = await fetch(api).then(res => res.json()).catch(err => console.error(err))
+                setInfo(data)
+                console.log(data)
+                // console.log(data.residents)
+                let a=await Promise.all(
+                    data?.residents.map((x)=>{
+                        return fetch(x)
+                            .then((res)=>res.json())})
+                )
+                setResults(a)
 
-    (async function (){
-      await results?.map(location=>{
-          let {residents}=location;
-          console.log(residents)
+                // console.log(results)
 
-          })
-    }())
-    return (
+            })()
+        },[api])
+console.log(results)
 
-            <div className="row">
-                {results?.map(location=>{
-                    let {residents}=location;
-                    residents?.map(resident=>{
-
-                        return <Cards character={resident} />
-                    })
-
+        return (
+            <div>
+                {results?.map(character=>{
+                    return <Cards character={character}  />
                 })}
-            </div>
 
-    );
-};
+
+            </div>
+        );
+    };
 
 export default LocationInfo;

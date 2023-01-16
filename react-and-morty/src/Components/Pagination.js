@@ -1,21 +1,23 @@
 import React, {useEffect, useState} from 'react';
 import ReactPaginate from "react-paginate";
 import {useCharacters} from "../api/useData";
+import InfiniteScroll from 'react-infinite-scroller';
 
 const Pagination = ({pageNumber,info,setPageNumber}) => {
 
 
     return (
 
-            <div className="container d-flex justify-content-center gap-5">
+            <div className="">
 
-                <ReactPaginate className="pagination justify-content-center my-4 gap-4"
+
+                <ReactPaginate className=""
                                forcePage={pageNumber==1?0:pageNumber-1}
                                pageCount={info?.pages}
                                nextLabel="Next"
                                previousLabel="Prev"
-                               nextClassName="btn btn-primary fs-5 next"
-                               previousClassName="btn btn-primary fs-5 prev"
+                               nextClassName=""
+                               previousClassName=""
                                pageLinkClassName="page-link"
                                onPageChange={(data)=>
                                {setPageNumber(data.selected+1)

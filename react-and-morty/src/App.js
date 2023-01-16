@@ -7,24 +7,26 @@ import Home from "./Routes/Home";
 import Characters from "./Routes/Characters";
 import CardInfo from "./Routes/CardInfo";
 import LocationInfo from "./Routes/LocationInfo";
+import Loader from "./Components/Navbar";
 
 
 
 function App(){
-    const [id,setID]=useState('')
+
   return(
       <Router>
         <div className="App">
         </div>
         <Routes>
           <Route path="/" element={<Home/>}/>
-            <Route path="/characters/:id" element={<CardInfo/>}/>
+            <Route path="/:id" element={<CardInfo/>}/>
             <Route path="/characters" element={<Characters/>}/>
             <Route path="/locations/:id" element={<LocationInfo />}/>
           <Route path="/locations" element={<Location />}/>
         </Routes>
       </Router>
   )
+// <Loader />)
 }
 
 
