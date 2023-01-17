@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 
 const CardInfo = () => {
     let [info,setInfo]=useState([])
-    let {name,image,location,origin,gender,species,status}=info;
+    let {name,image,gender,species,status}=info;
     let {id}=useParams()
     let api=`https://rickandmortyapi.com/api/character/${id}`
 
@@ -15,16 +15,12 @@ const CardInfo = () => {
     },[api])
 
     return (
-        <div>
+        <div key={id}>
             <img src={image} alt=""></img>
             <div>{name}</div>
-            {/*<div>{location.name}</div>*/}
-                <div>{gender}</div>
-                {/*<div>{origin.name}</div>*/}
-                <div>{species}</div>
-                <div>{status}</div>
-
-            
+            <div>{gender}</div>
+            <div>{species}</div>
+            <div>{status}</div> 
         </div>
     );
 };
