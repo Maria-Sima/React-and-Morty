@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
 import InfiniteScroll from 'react-infinite-scroll-component';
+import Cards from '../Components/Cards';
+import NavBar from '../Components/NavBar';
+import ParticleBackground from '../Components/ParticleBackground';
+
+import './Locations.scss'
 
 
 const Locations = () => {
@@ -11,7 +15,7 @@ const Locations = () => {
     useEffect(() => {
         const LoadLocations = async () => {
             
-            const newLocations = await fetch(`https://rickandmortyapi.com/api/character/?page=${pageNumber}`).then(res=>res.json()).catch(err=>console.error(err));
+            const newLocations = await fetch(`https://rickandmortyapi.com/api/location/?page=${pageNumber}`).then(res=>res.json()).catch(err=>console.error(err));
             setLocations(locations.concat(newLocations.results));
             
             if(pageNumber === newLocations.info.pages){
@@ -22,19 +26,18 @@ const Locations = () => {
 
         LoadLocations();
     }, [pageNumber])
-
+    
     return( <>
+                <NavBar />
+                <ParticleBackground />
                 <InfiniteScroll
                     dataLength={locations.length}
                     next={() => { setPageNumber(pageNumber+1)}} 
                     hasMore={hasMore}
                 >
                     <div className='locations-wrapper'>
-                        {locations.map((location) => {
-                            return  <Link key={location.id}>
-                                        <div>{location.name}</div>
-                                        <div>{location.type}</div>
-                                    </Link>
+                        {locations.map((loc) => {
+                            return <Cards className='characters-items' key={loc.id} name={loc.name} image={require(`../images/rick-and-morty-${Math.floor(Math.random() * 10) + 1}.png`)} location={loc.dimension} species={loc.type} status={''} />
                         })}
                     </div>
                 </InfiniteScroll>

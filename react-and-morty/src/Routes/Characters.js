@@ -3,6 +3,8 @@ import './Characters.scss';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 import Cards from "../Components/Cards";
+import NavBar from "../Components/NavBar";
+import ParticleBackground from "../Components/ParticleBackground";
 
 
 const Characters = () => {
@@ -24,9 +26,11 @@ const Characters = () => {
 
         LoadCharacters();
     }, [pageNumber])
-   
+    
     return( 
             <>
+                <NavBar />
+                <ParticleBackground />
                 <InfiniteScroll
                     dataLength={characters.length}
                     next={() => { setPageNumber(pageNumber+1)}} 
@@ -34,7 +38,8 @@ const Characters = () => {
                 >
                     <div className="characters-wrapper">
                         {characters?.map((character) => {
-                            return <Cards className='characters-items' key={character.id} character={character} />
+                            let{id,name,image,location,species,status}=character;
+                            return <Cards className='characters-items' key={id} name={name} image={image} location={location.name} species={species} status={status} />
                         })}
                     </div>
                 </InfiniteScroll>

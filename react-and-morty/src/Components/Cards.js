@@ -1,34 +1,59 @@
+import { useState } from "react";
 import {Link} from "react-router-dom";
 import './Cards.scss';
+import Modal from "./Modal";
 
-const Cards = ({character}) => {
-    let{id,name,image,location,species}=character;
+const Cards = ({image,name,location,status,species,id}) => {
+    const [modal,setModal]=useState(false);
+    const close=()=>setModal(false)
+    const open=()=>setModal(true)
+
     return (
-                 <div 
-                 style={{
-                     backgroundImage: `url(${image})`
-                 }}
-                 className='card'
-                 key={id}
-                 >
-                    <div className="card-content">
-                    <h2 className='card-title'>{name}</h2>
-                    <div className='card-body'>
-                        <span className="">Species: {species}</span>
-                        <div className="">Location: {location.name}</div>
+            <>
+                {/* <div className="container">
+                    <Link  
+                        onClick={()=>modal? close():open()}
+                        key={id}
+                    >
+                    <div className="box">
+                        <div className="imgBox">
+                            <img src={image} alt="" />
+                            <h2>{name}</h2>
+                        </div>
+                        <div className="content">
+                        </div>
                     </div>
-                        <Link  
-                            to={`/${id}`}
-                            key={id}
-                        >
-                            <button className="button">More</button>
-                        </Link>
+                    </Link>
+                </div> */}
+                <div className="flip-card-container">
+                    <div className="flip-card">
+
+                        <div className="card-front">
+                            <figure>
+                                <div className="img-bg"></div>
+                                <img src={image} alt="" />
+                                <figcaption>{name}</figcaption>
+                            </figure>
+                        </div>
+
+                        <div className="card-back">
+                            <figure>
+                                <div className="img-bg"></div>
+                                <img src={image} alt="" />
+                            </figure>
+                            <Link  
+                                onClick={()=>modal? close():open()}
+                                key={id}
+                            >
+                                <button>Info</button>
+                            </Link>
+                        </div>
+
                     </div>
-                 </div>
-
-
-
-
+                </div>
+                
+                {modal && <Modal modal={modal} handleClose={close} name={name} image={image} location={location} species={species} status={status}/>}
+            </>
     );
 };
 
