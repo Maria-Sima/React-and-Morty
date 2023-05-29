@@ -29,6 +29,7 @@ recent:///3c8ddd6fde78c9df0093659764748a57
 - **Character Details**: Clicking on a character card in the character listing opens a dedicated component that displays **more specific information** about the selected character. Users can access additional details, such as character traits, backstory, and other relevant information.
 
 - **Location Details**: Similarly, clicking on a location card in the location listing presents users with a dedicated component that offers **more specific information** about the selected location. This includes details about the planet, its features, and any notable events associated with it.
+- 
 recent:///05d3c20219410a50d02d3c5964748a57
 
 - **Infinite Scrolling**: As an additional enhancement, the app provides an optional feature where users can conveniently browse through characters and locations by simply **scrolling down**. As they reach the bottom of the list, new sets of characters or locations are dynamically loaded, allowing users to seamlessly continue scrolling.
