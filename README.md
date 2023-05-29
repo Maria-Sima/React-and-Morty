@@ -14,6 +14,7 @@ The **Rick and Morty App** is a React application that allows users to explore i
 The project utilizes the following technologies:
 
 - **React**: A JavaScript library for building user interfaces.
+- ![Example Image](https://w7.pngwing.com/pngs/79/518/png-transparent-js-react-js-logo-react-react-native-logos-icon-thumbnail.png)
 - **SCSS**: A powerful CSS preprocessor for styling the components.
 
 ## Features
@@ -21,13 +22,13 @@ The project utilizes the following technologies:
 The Rick and Morty App offers the following features:
 
 - **Landing Page**: Upon entering the website, users are greeted with a visually appealing landing page that showcases a prominent **Rick and Morty logo**. The page also includes two buttons: one for accessing the list of characters and another for exploring locations. A brief description of the app's functionality is provided beneath the buttons.
-![Example Image](https://w7.pngwing.com/pngs/79/518/png-transparent-js-react-js-logo-react-react-native-logos-icon-thumbnail.png)
+![Example Image](https://i.imgur.com/qNeHgGM.png)
 - **Character Listing**: Clicking on the **"Characters"** button reveals a **paginated list** of characters from the Rick and Morty series. Each character is displayed with an image, name, and species. Users can easily navigate between different pages of characters using the **pagination bar** located at the end of the list.
-![Example Image](./recent:///3c8ddd6fde78c9df0093659764748a57)
+![Example Image]((https://i.imgur.com/abPFLPk.jpg)
 - **Location Listing**: By selecting the **"Locations"** button, users can access a **paginated list** of various locations featured in the Rick and Morty show. Each location card provides the name and type of the respective planet. Similar to the character listing, users can switch between different pages of locations using the **pagination bar**.
 
 - **Character Details**: Clicking on a character card in the character listing opens a dedicated component that displays **more specific information** about the selected character. Users can access additional details, such as character traits, backstory, and other relevant information.
-
+![Example Image](https://i.imgur.com/IOQ4eIg.png)
 - **Location Details**: Similarly, clicking on a location card in the location listing presents users with a dedicated component that offers **more specific information** about the selected location. This includes details about the planet, its features, and any notable events associated with it.
 - ![5](https://user-images.githubusercontent.com/05d3c20219410a50d02d3c5964748a57)
 
