@@ -21,7 +21,7 @@ The project utilizes the following technologies:
 The Rick and Morty App offers the following features:
 
 - **Landing Page**: Upon entering the website, users are greeted with a visually appealing landing page that showcases a prominent **Rick and Morty logo**. The page also includes two buttons: one for accessing the list of characters and another for exploring locations. A brief description of the app's functionality is provided beneath the buttons.
-recent:///8fd9930c3f17f20503ea425164748a57
+![Alt Text](recent:///8fd9930c3f17f20503ea425164748a57)
 - **Character Listing**: Clicking on the **"Characters"** button reveals a **paginated list** of characters from the Rick and Morty series. Each character is displayed with an image, name, and species. Users can easily navigate between different pages of characters using the **pagination bar** located at the end of the list.
 recent:///3c8ddd6fde78c9df0093659764748a57
 - **Location Listing**: By selecting the **"Locations"** button, users can access a **paginated list** of various locations featured in the Rick and Morty show. Each location card provides the name and type of the respective planet. Similar to the character listing, users can switch between different pages of locations using the **pagination bar**.
