@@ -14,8 +14,9 @@ The **Rick and Morty App** is a React application that allows users to explore i
 The project utilizes the following technologies:
 
 - **React**: A JavaScript library for building user interfaces.
-- ![Example Image](https://i.imgur.com/UK2I7G0.png)
+- ![Example Image](https://w7.pngwing.com/pngs/235/872/png-transparent-react-computer-icons-redux-javascript-others-logo-symmetry-nodejs-thumbnail.png)
 - **SCSS**: A powerful CSS preprocessor for styling the components.
+- 
  ![Example Image](https://sass-lang.com/assets/img/styleguide/seal-black-1e36d095.png)
 
 ## Features
